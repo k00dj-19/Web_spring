@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
-import project.test.Member;
+//import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
+
 // 사용자가 요청 -> 응답(HTML 파일)
 // @Controller
 
@@ -23,15 +24,30 @@ public class HttpControllerTest {
   }
   
   //https://web-spring-ysnkx.run.goorm.io/http/post (insert)
-  @PostMapping("/http/post")
-  public String postTest() {
-    return "post 요청";
+  /*
+  @PostMapping("/http/post") // raw : text/plain
+  public String postTest(@RequestBody String text) {
+    return "post 요청: " + text;
+  }
+  */
+  
+  /* json
+  {
+	"id" : 1,
+	"username" : "kdj",
+	"password" : 123456,
+	"email" : "kdj@naver.com"
+  }
+  */
+  @PostMapping("/http/post") //raw : application/json
+  public String postTest(@RequestBody Member m) {  // MessageConverter (스프링부트)
+    return "post 요청: " + m.getId() + ", " + m.getUsername() + ", " + m.getPassword() + ", " + m.getEmail();
   }
   
   //https://web-spring-ysnkx.run.goorm.io/http/put (update)
   @PutMapping("/http/put")
-  public String putTest() {
-    return "put 요청";
+  public String putTest(@RequestBody Member m) {
+    return "put 요청" + m.getId() + ", " + m.getUsername() + ", " + m.getPassword() + ", " + m.getEmail();
   }
   
   //https://web-spring-ysnkx.run.goorm.io/http/delete (delete)
