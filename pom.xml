@@ -41,6 +41,14 @@
         </dependency>
         
         <!-- 추가 라이브러리 시작 -->
+        <!--Lombok-->
+        <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.18.20</version>
+          <scope>provided</scope>
+        </dependency>
+      
         <!-- 시큐리티 태그 라이브러리 -->
         <!-- <dependency>
           <groupId>org.springframework.security</groupId>
