@@ -17,6 +17,7 @@ public class HttpControllerTest {
   
   private static final String TAG = "HttpControllerTest : ";
   
+  //https://web-spring-ysnkx.run.goorm.io/blog/http/lombok
   @GetMapping("/http/lombok")
   public String lombokTest() {
     Member m = new Member(1, "kdj", "1234", "kdj@naver.com");
@@ -26,6 +27,7 @@ public class HttpControllerTest {
     return "lombok test 완료";
   }
   
+
   
   
   // 인터넷 브라우저 요청은 무조건 get 요청밖에 할 수 없다. 따라서 postman사용해서 put,post,delete해보기
@@ -36,7 +38,7 @@ public class HttpControllerTest {
     return "get 요청: " + m.getId() + ", " + m.getUsername() + ", " + m.getPassword() + ", " + m.getEmail();
   }
   
-  //https://web-spring-ysnkx.run.goorm.io/http/post (insert)
+  //https://web-spring-ysnkx.run.goorm.io/blog/http/post (insert)
   /*
   @PostMapping("/http/post") // raw : text/plain
   public String postTest(@RequestBody String text) {
@@ -57,13 +59,13 @@ public class HttpControllerTest {
     return "post 요청: " + m.getId() + ", " + m.getUsername() + ", " + m.getPassword() + ", " + m.getEmail();
   }
   
-  //https://web-spring-ysnkx.run.goorm.io/http/put (update)
+  //https://web-spring-ysnkx.run.goorm.io/blog/http/put (update)
   @PutMapping("/http/put")
   public String putTest(@RequestBody Member m) {
     return "put 요청: " + m.getId() + ", " + m.getUsername() + ", " + m.getPassword() + ", " + m.getEmail();
   }
   
-  //https://web-spring-ysnkx.run.goorm.io/http/delete (delete)
+  //https://web-spring-ysnkx.run.goorm.io/blog/http/delete (delete)
   @DeleteMapping("/http/delete")
   public String deleteTest() {
     return "delete 요청";

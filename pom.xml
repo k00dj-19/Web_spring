@@ -56,6 +56,7 @@
         </dependency> -->
 
         <!-- JSP 템플릿 엔진 -->
+        <!-- 기본적으로 spring boot는 jsp를 지원하지 않기 때문에 따로 의존성 설정을 해줘야 jsp가 동작가능해진다. -->
         <dependency>
           <groupId>org.apache.tomcat.embed</groupId>
           <artifactId>tomcat-embed-jasper</artifactId>
