@@ -47,10 +47,10 @@
         <!-- 추가 라이브러리 시작 -->
         <!--Lombok-->
         <dependency>
-          <groupId>org.projectlombok</groupId>
-          <artifactId>lombok</artifactId>
-          <version>1.18.20</version>
-          <scope>provided</scope>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+            <scope>provided</scope>
         </dependency>
       
         <!-- 시큐리티 태그 라이브러리 -->
@@ -68,8 +68,8 @@
 
         <!-- JSTL -->
         <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>jstl</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
         </dependency>
         <!-- Java Persistence API -->
         <dependency>
@@ -87,11 +87,13 @@
 
         <!-- mysql -->
         <dependency>
-          <groupId>mysql</groupId>
-          <artifactId>mysql-connector-java</artifactId>
-          <version>8.0.18</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
         </dependency>
         <!-- 추가 라이브러리 끝 -->
+      
+      
         <!-- Web 
         <dependency>
             <groupId>org.springframework.boot</groupId>
