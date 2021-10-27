@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import project.model.User;
 import project.repository.UserRepository;
+import project.model.RoleType;
 
 @RestController
 public class DummyControllerTest {
@@ -26,6 +27,7 @@ public class DummyControllerTest {
     System.out.println("role: " + user.getRole());
     System.out.println("createDate: " + user.getCreateDate());
     
+    user.setRole(RoleType.USER);
     userRepository.save(user);  // DB에 가져온 객체 정보를 자동으로 저장
     return "회원가입이 완료되었습니다.";
   }
