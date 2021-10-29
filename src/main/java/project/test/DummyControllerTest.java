@@ -5,12 +5,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 
 import project.model.User;
 import project.repository.UserRepository;
 import project.model.RoleType;
 
 import java.util.function.Supplier;
+import java.util.List;
 
 @RestController
 public class DummyControllerTest {
@@ -18,6 +23,21 @@ public class DummyControllerTest {
   @Autowired  // 의존성 주입(DI)
   // @Autowired 안쓰면 DummyControllerTest를 @RestController가 메모리에 로드할 때 userRepository가 null이다. 써주면 같이 메모리에 로드해주어 사용하기만 하면됨.
   private UserRepository userRepository;
+  
+  // https://web-spring-ysnkx.run.goorm.io/blog/dummy/user
+  @GetMapping("/dummy/users")
+  public List<User> list(){
+    return userRepository.findAll();
+  }
+  
+  // 한 페이지당 2건의 데이터를 리턴받아 볼 예정
+  @GetMapping("/dummy/user")
+  public List<User> pageList(@PageableDefault(size=2, sort="id", direction = Sort.Direction.DESC) Pageable pageable){
+    Page<User> pagingUser = userRepository.findAll(pageable);
+    
+    List<User> users = pagingUser.getContent();
+    return users;
+  }
   
   // {id} 주소로 파라미터를 전달 받을 수 있음.
   // https://web-spring-ysnkx.run.goorm.io/blog/dummy/user/{id}
