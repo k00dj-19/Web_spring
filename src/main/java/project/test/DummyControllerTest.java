@@ -32,13 +32,14 @@ public class DummyControllerTest {
   // id를 전달할 때, 해당 id에 대한 데이터가 없으면 insert.
   // id를 전달할 때, 해당 id에 대한 데이터가 있으면 update해줌.
   // email, password만 수정 가능
-  @Transactional  // 다음 강의에서 설명. save를 하지 않아도 update가 된다!! => 더티체킹.
+  @Transactional  // 함수 종료 시에 자동으로 commit이 됨.
   @PutMapping("/dummy/user/{id}")
   public User updateUser(@PathVariable int id, @RequestBody User requestUser){  // Json 데이터를 요청 -> 스프링의 MessageConverter의 Jackson라이브러리가 Java Object로 변환해서 받아줌.
     System.out.println("id: "+id);
     System.out.println("password: "+requestUser.getPassword());
     System.out.println("email: "+requestUser.getEmail());
     
+    // id로 user을 찾으면 그 user을 영속성 컨텍스트의 1차캐시에 영속화함.
     User user = userRepository.findById(id).orElseThrow(new Supplier<IllegalArgumentException>() {
       @Override
       public IllegalArgumentException get() {
