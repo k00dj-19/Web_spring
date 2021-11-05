@@ -66,7 +66,7 @@ public class DummyControllerTest {
     return null;
   }
   
-  // https://web-spring-ysnkx.run.goorm.io/blog/dummy/user
+  // https://web-spring-ysnkx.run.goorm.io/blog/dummy/users
   @GetMapping("/dummy/users")
   public List<User> list(){
     return userRepository.findAll();
