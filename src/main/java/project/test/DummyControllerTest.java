@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 import project.model.User;
 import project.repository.UserRepository;
@@ -26,6 +28,17 @@ public class DummyControllerTest {
   @Autowired  // 의존성 주입(DI)
   // @Autowired 안쓰면 DummyControllerTest를 @RestController가 메모리에 로드할 때 userRepository가 null이다. 써주면 같이 메모리에 로드해주어 사용하기만 하면됨.
   private UserRepository userRepository;
+  
+  @DeleteMapping("/dummy/user/{id}")
+  public String delete(@PathVariable int id) {
+    try{
+      userRepository.deleteById(id);
+    } catch (EmptyResultDataAccessException e) {
+      return "삭제에 실패하였습니다. 해당 id는 DB에 없습니다.";
+    }
+    
+    return "삭제 되었습니다! id : " + id;
+  }
   
   
   // save 함수는 id를 전달하지 않으면 insert를 해주고,
