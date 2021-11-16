@@ -8,3 +8,6 @@ https://getinthere.tistory.com/category/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%
 
 강의 정리
 https://docs.google.com/document/d/16IJXt1hLOuY8Wh7xC3gIq_qmtw0KcPO269NLPwlUBDk/edit?usp=sharing
+
+
+21.11.16 - 45강. 스프링 JPA의 OSIV 전략
