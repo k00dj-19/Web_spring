@@ -34,16 +34,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+      
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+      
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        
+              
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <!-- 추가 라이브러리 시작 -->
         <!--Lombok-->
         <dependency>
@@ -54,10 +60,10 @@
         </dependency>
       
         <!-- 시큐리티 태그 라이브러리 -->
-        <!-- <dependency>
+        <dependency>
           <groupId>org.springframework.security</groupId>
           <artifactId>spring-security-taglibs</artifactId>
-        </dependency> -->
+        </dependency>
 
         <!-- JSP 템플릿 엔진 -->
         <!-- 기본적으로 spring boot는 jsp를 지원하지 않기 때문에 따로 의존성 설정을 해줘야 jsp가 동작가능해진다. -->
@@ -98,6 +104,7 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+
         <!-- 추가 라이브러리 끝 -->
       
       
