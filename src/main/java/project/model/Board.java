@@ -14,7 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.FetchType;
 
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
@@ -38,8 +37,7 @@ public class Board {
   
   @Lob  // 대용량 데이터일때 사용
   private String content;  // 섬머노트 라이브러리 사용. <html>태그가 섞여서 디자인 됨. 데이터 용량이 커짐.
-  
-  @ColumnDefault("0")
+
   private int count;  // 조회수
   
   @ManyToOne(fetch = FetchType.EAGER)   // 연관관계. Many = Board, User = One. 한명의 User가 많은 Board 작성 가능. 기본 fatch 전략이 EAGER. select하면 바로바로 가져옴.

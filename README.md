@@ -17,3 +17,4 @@ https://docs.google.com/document/d/16IJXt1hLOuY8Wh7xC3gIq_qmtw0KcPO269NLPwlUBDk/
 - 21.11.23 - 50강. 비밀번호 해쉬 후 회원가입하기
 - 21.11.29 - 51강. XSS와 CSRF
 - 21.12.07 - 52강. 스프링 시큐리티 로그인
+- 21.12.08 - 53강. 글쓰기 완료
