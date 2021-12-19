@@ -58,7 +58,6 @@
             <version>1.18.20</version>
             <scope>provided</scope>
         </dependency>
-      
         <!-- 시큐리티 태그 라이브러리 -->
         <dependency>
           <groupId>org.springframework.security</groupId>
@@ -96,13 +95,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.18</version>
-        </dependency>
-      
-        <!-- devtools -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <!-- 추가 라이브러리 끝 -->
