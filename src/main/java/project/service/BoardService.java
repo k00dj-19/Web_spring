@@ -29,4 +29,11 @@ public class BoardService {
   public List<Board> 글목록(){
     return boardRepository.findAll();
   }
+  
+  public Board 글상세보기(int id){
+    return boardRepository.findById(id)
+      .orElseThrow(()->{
+        return new IllegalArgumentException("글 상세보기 실패 : 아이디를 찾을 수 없습니다.");
+      });
+  }
 }
