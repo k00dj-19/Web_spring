@@ -22,3 +22,4 @@ https://docs.google.com/document/d/16IJXt1hLOuY8Wh7xC3gIq_qmtw0KcPO269NLPwlUBDk/
 - 21.12.20 - 56강. 글 상세보기
 - 21.12.21 - 55강. 글목록 페이징하기
 - 21.12.22 - 57강. 글 삭제하기
+- 21.12.23 - 58강. 글 수정하기
