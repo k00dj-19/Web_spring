@@ -1,3 +1,4 @@
+// DTO : Data Transfer Object
 package project.dto;
 
 import lombok.AllArgsConstructor;

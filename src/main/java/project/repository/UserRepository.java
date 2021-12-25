@@ -13,6 +13,7 @@ import project.model.User;
 public interface UserRepository extends JpaRepository<User, Integer>{  // 해당 JpaRepository는 User테이블이 관리한다. primary key는 integer다. JpaRepository를 상속했으므로 모든 함수 사용 가능.
   
   // SELECT * FROM user WHERE username = ?1;
+  // Optional : null이 올 수 있는 값을 감싸는 Wrapper클래스. NullPointerException이 발생하지 않도록 도와줌.
   Optional<User> findByUsername(String username);
 }
   
@@ -25,4 +26,4 @@ public interface UserRepository extends JpaRepository<User, Integer>{  // 해당
   
   // 위와 동일한 함수
   // @Query(value="SELECT * FROM user WHERE username = ?1 AND password = ?2;", nativeQuery = true)
-  // User login(String username, String password);
+  // User findByUsernameAndPassword(String username, String password);
