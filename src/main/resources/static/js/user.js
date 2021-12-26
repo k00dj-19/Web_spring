@@ -42,7 +42,8 @@ let index = {
   update: function(){
     //alert("user의 save함수 호출됨");
     let data = {
-      id: $("id").val(),
+      id: $("#id").val(),
+      username: $("#username").val(),
       password: $("#password").val(),
       email: $("#email").val()
     };
@@ -50,6 +51,7 @@ let index = {
     $.ajax({
       type: "PUT",
       url: "/user",  
+      data: JSON.stringify(data),
       contentType: "application/json; charset=utf-8", 
       dataType: "json"  
     }).done(function(resp){

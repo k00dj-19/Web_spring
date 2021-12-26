@@ -49,7 +49,7 @@ public class BoardService {
   public void 글수정하기(int id, Board requestBoard){
     Board board = boardRepository.findById(id)
       .orElseThrow(()->{
-        return new IllegalArgumentException("글 찾기패 : 아이디를 찾을 수 없습니다.");
+        return new IllegalArgumentException("글 수정 실패 : 아이디를 찾을 수 없습니다.");
       });// 영속화 완료
     board.setTitle(requestBoard.getTitle());
     board.setContent(requestBoard.getContent());
