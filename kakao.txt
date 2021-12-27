@@ -1,0 +1,8 @@
+웹서버주소 : https://web-spring-ysnkx.run.goorm.io
+클라이언트키 : 52f768e736b906a32efb7b65bb22c3d2
+시크릿 키 :
+
+카카오 로그인요청 콜백 주소 : https://web-spring-ysnkx.run.goorm.io/auth/kakao
+
+User 오브젝트 : id(번호), username, password, email
+카카오로부터 받을 정보 : profile 정보(필수), email(선택))
