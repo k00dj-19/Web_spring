@@ -1,24 +1,28 @@
-웹서버주소 : https://web-spring-ysnkx.run.goorm.io
-클라이언트키 : 52f768e736b906a32efb7b65bb22c3d2
-시크릿 키 :
+1. 웹서버주소 : https://web-spring-ysnkx.run.goorm.io
+2. 클라이언트키 : 52f768e736b906a32efb7b65bb22c3d2
+3. 카카오 로그인요청 콜백 주소 : https://web-spring-ysnkx.run.goorm.io/auth/kakao/callback
 
-카카오 로그인요청 콜백 주소 : https://web-spring-ysnkx.run.goorm.io/auth/kakao/callback
-
+4. 카카오 동의 구성
 User 오브젝트 : id(번호), username, password, email
 카카오로부터 받을 정보 : profile 정보(필수), email(선택))
 
-로그인 요청 주소 (GET) :
+5. 로그인 요청 주소 (GET) :
 https://kauth.kakao.com/oauth/authorize?client_id=52f768e736b906a32efb7b65bb22c3d2&redirect_uri=https://web-spring-ysnkx.run.goorm.io/auth/kakao/callback&response_type=code
 
-응답받은 코드 :
+6. 응답받은 코드 :
 
 
-토큰 발급 요청 주소 (POST) - http body에 데이터를 전달 (5가지 데이터를 담아라):
-MIME : application/x-www-form-urlencoded;charset=utf-8 (key=value)
-
-https://kauth.kakao.com/oauth/token
-
+7. 토큰 발급 요청 주소 (POST) - http body에 데이터를 전달 (5가지 데이터를 담아라)
+요청 주소 : https://kauth.kakao.com/oauth/token
+헤더 값 : application/x-www-form-urlencoded;charset=utf-8
+바디 값 : 
 grant_type=authorization_code
 client_id=52f768e736b906a32efb7b65bb22c3d2
 redirect_uri=https://web-spring-ysnkx.run.goorm.io/auth/kakao/callback
 code={동적}
+
+8. 토큰을 통한 사용자 정보 조회 (POST)
+요청 주소 : https://kapi.kakao.com/v2/user/me
+헤더 값
+Authorization: Bearer {ACCESS_TOKEN}
+Content-type: application/x-www-form-urlencoded;charset=utf-8

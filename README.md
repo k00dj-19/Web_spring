@@ -26,3 +26,4 @@ https://docs.google.com/document/d/16IJXt1hLOuY8Wh7xC3gIq_qmtw0KcPO269NLPwlUBDk/
 - 21.12.25 - 60강. 회원수정1
 - 21.12.26 - 61강. 회원수정2
 - 21.12.27 - 64강. 카카오 로그인 엑세스토큰 받기
+- 21.12.29 - 65강. 카카오 로그인 서비스 구현 완료(19:00)
