@@ -91,7 +91,8 @@ buildNumber.properties
 .mvn
 mvnw
 mvnw.cmd
-
+kakao.txt
+application.yml
 goorm.manifest
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,eclipse

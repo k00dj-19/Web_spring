@@ -32,7 +32,7 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY) // 프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
   private int id; // 시퀀스, auto_increment
   
-  @Column(nullable = false, length = 30, unique = true)
+  @Column(nullable = false, length = 100, unique = true)
   private String username; // 아이디
   
   @Column(nullable = false, length = 100) // 123456 => 해쉬를 통해 암호화 하므로 최대 길이를 100으로 넉넉하게 잡는다.
