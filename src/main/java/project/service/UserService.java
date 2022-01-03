@@ -2,8 +2,6 @@ package project.service;
 
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -48,10 +46,15 @@ public class UserService {
     User persistance = userRepository.findById(user.getId()).orElseThrow(()->{
         return new IllegalArgumentException("회원 찾기 실패");
     });
-    String rawPassword = user.getPassword();
-    String encPassword = encoder.encode(rawPassword);
-    persistance.setPassword(encPassword);
-    persistance.setEmail(user.getEmail());    
+    
+    // Validate 체크 => oauth에 값이 없으면, 즉 카카오 로그인이 아니면 수정가능.
+    if(persistance.getOauth() == null || persistance.getOauth().equals("")){
+      String rawPassword = user.getPassword();
+      String encPassword = encoder.encode(rawPassword);
+      persistance.setPassword(encPassword);
+      persistance.setEmail(user.getEmail());
+    }
+    
     // 회원수정 함수 종료시 == 서비스 종료시 == 트랜잭션 종료 == 자동 commit
     // 영속화된 persistance 객체의 변화가 감지되면(더티체킹) 자동으로 update문을 날려줌.
   }
