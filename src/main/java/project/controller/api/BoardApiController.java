@@ -15,8 +15,8 @@ import javax.servlet.http.HttpSession;
 import project.config.auth.PrincipalDetail;
 import project.dto.ResponseDto;
 import project.model.Board;
+import project.model.Reply;
 import project.service.BoardService;
-
 
 @RestController
 public class BoardApiController {
@@ -41,5 +41,11 @@ public class BoardApiController {
     boardService.글수정하기(id,board);
     return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
     
+  }
+  
+  @PostMapping("/api/board/{boardId}/reply")
+  public ResponseDto<Integer> replySave(@PathVariable int boardId, @RequestBody Reply reply, @AuthenticationPrincipal PrincipalDetail principal){
+    boardService.댓글쓰기(principal.getUser(), boardId, reply);
+    return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
   }
 }

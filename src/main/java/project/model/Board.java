@@ -50,7 +50,7 @@ public class Board {
 	
 	@OneToMany(mappedBy = "board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE) // mappedBy 연관관계의 주인이 아니다 (난 FK가 아니에요) DB에 칼럼을 만들지 마세요.
 	@JsonIgnoreProperties({"board"}) // Reply를 호출할 때 그 내부의 board를 무시함. 무한창조 방지
-	@OrderBy("id desc")
+	@OrderBy("id desc")  // reply 정렬 할때 id를 기준으로 오름차순으로 정렬함.
 	private List<Reply> replys;
 	
 	@CreationTimestamp
