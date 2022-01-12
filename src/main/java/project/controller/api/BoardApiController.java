@@ -13,6 +13,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import javax.servlet.http.HttpSession;
 
 import project.config.auth.PrincipalDetail;
+import project.dto.ReplySaveRequestDto;
 import project.dto.ResponseDto;
 import project.model.Board;
 import project.model.Reply;
@@ -43,9 +44,11 @@ public class BoardApiController {
     
   }
   
+  // 데이터를 받을 때 컨트롤러에서 dto를 만들어서 받는 게 좋다.
+  // dto는 데이터를 한번에 받아서 영속화 시켜서 집어넣는다.
   @PostMapping("/api/board/{boardId}/reply")
-  public ResponseDto<Integer> replySave(@PathVariable int boardId, @RequestBody Reply reply, @AuthenticationPrincipal PrincipalDetail principal){
-    boardService.댓글쓰기(principal.getUser(), boardId, reply);
+  public ResponseDto<Integer> replySave(@RequestBody ReplySaveRequestDto replySaveRequestDto){
+    boardService.댓글쓰기(replySaveRequestDto);
     return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
   }
 }

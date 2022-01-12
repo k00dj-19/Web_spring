@@ -9,6 +9,8 @@ https://getinthere.tistory.com/category/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%
 <강의 정리>
 https://docs.google.com/document/d/16IJXt1hLOuY8Wh7xC3gIq_qmtw0KcPO269NLPwlUBDk/edit?usp=sharing
 
+<인터넷 서버문제일때 해결법>
+lombok 라이브러리 문제이다. pom.xml에서 지운 후, 실제 라이브러리 파일에서도 지운다. 그리고 'mvn clean install'(F5)을 통해 지우고 재설치한 후 실행한다. 오류 후에 다시 pom.xml에 lombok을 넣고 F5를 하고 재시작하면 된다.  
 
 - 21.11.16 - 45강. 스프링 JPA의 OSIV 전략
 - 21.11.17 - 47강. 시큐리티 시작 전 요청 주소 변경
@@ -30,3 +32,5 @@ https://docs.google.com/document/d/16IJXt1hLOuY8Wh7xC3gIq_qmtw0KcPO269NLPwlUBDk/
 - 22.01.01 - 65강. 카카오 로그인 서비스 구현 완료(1:09:00)
 - 22.01.03 - 65강. 카카오 로그인 서비스 구현 완료
 - 22.01.09 - 67강. 댓글 목록 뿌리기
+- 22.01.10 - 68강. 댓글 작성하기
+- 22.01.12 - 
