@@ -68,6 +68,7 @@ public class BoardService {
   
   @Transactional
   public void 댓글쓰기(ReplySaveRequestDto replySaveRequestDto){  
-    replyRepository.mSave(replySaveRequestDto.getUserId(), replySaveRequestDto.getBoardId(), replySaveRequestDto.getContent());
+    int result = replyRepository.mSave(replySaveRequestDto.getUserId(), replySaveRequestDto.getBoardId(), replySaveRequestDto.getContent());
+    System.out.println("BoardService : "+result);
   }
 }
