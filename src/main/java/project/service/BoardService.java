@@ -66,11 +66,11 @@ public class BoardService {
     // 해당 함수 종료시(Service가 종료될 때) 트랜잭션이 종료됨. 이때 더티체킹이 일어나 DB에 자동업데이트가 됨.
   }
   
-  @Transactional
-  public void 댓글쓰기(ReplySaveRequestDto replySaveRequestDto){  
-    int result = replyRepository.mSave(replySaveRequestDto.getUserId(), replySaveRequestDto.getBoardId(), replySaveRequestDto.getContent());
-    System.out.println("BoardService : "+result);
-  }
+	@Transactional
+	public void 댓글쓰기(ReplySaveRequestDto replySaveRequestDto) {
+		int result = replyRepository.mSave(replySaveRequestDto.getUserId(), replySaveRequestDto.getBoardId(), replySaveRequestDto.getContent());
+		System.out.println("BoardService : "+result);
+	}
   
   @Transactional
   public void 댓글삭제(int replyId) {
